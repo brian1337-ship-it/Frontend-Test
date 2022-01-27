@@ -1,27 +1,39 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Welcome from "../components/Welcome";
 import HowWeDoIt from "../components/HowWeDoIt";
 import ProblemsSolved from "../components/ProblemsSolved";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const Homepage = () => {
   const howWeDoIt = useRef(null);
 
+  // Scroll down arrow
   const gotoHowWeDoItSection = () =>
     window.scrollTo({ top: howWeDoIt.current.offsetTop, behavior: "smooth" });
+
+  const { t, i18n } = useTranslation();
+
+  // Pull state from redux store
+  const { language } = useSelector((state) => state.header);
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
 
   return (
     <HomepageContainer>
       <WelcomeSection>
-        <Welcome scrollDown={gotoHowWeDoItSection} />
+        <Welcome scrollDown={gotoHowWeDoItSection} t={t} />
       </WelcomeSection>
 
       <HowWeDoItSection ref={howWeDoIt}>
-        <HowWeDoIt />
+        <HowWeDoIt t={t} />
       </HowWeDoItSection>
 
       <ProblemsSolvedSection>
-        <ProblemsSolved />
+        <ProblemsSolved t={t} />
       </ProblemsSolvedSection>
     </HomepageContainer>
   );

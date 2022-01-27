@@ -2,14 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const Clients = () => {
+const Clients = ({t}) => {
   return (
     <ClientsContainer>
-      <h3 id="OurClients">Our Clients</h3>
+      <h3 id="OurClients">{t("abouttitle6")}</h3>
       <p>
-        From automotive to health care to financial services to consumer
-        packaged goods, we have delivered profound business results for the
-        finest companies in the world.
+      {t("aboutdesc9")}
       </p>
 
       <ClientsList>

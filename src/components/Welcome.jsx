@@ -1,8 +1,13 @@
-import React from "react";
+import React,  {useEffect} from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const Welcome = ({ scrollDown }) => {
+
+
+const Welcome = ({ scrollDown, t }) => {
+  
+
+
   return (
     <WelcomeContainer>
       <video
@@ -21,8 +26,11 @@ const Welcome = ({ scrollDown }) => {
       <WelcomeContent>
         <Fade bottom>
           <WelcomeText>
-            <p>We make people</p>
-            <p>more valuable to brands</p>
+            {/* <Trans i18nKey="description.part1">
+              To get started, edit <code>src/App.js</code> and save to reload.
+            </Trans> */}
+            <p>{t("hometitle.part1")}</p>
+            <p>{t("hometitle.part2")}</p>
           </WelcomeText>
         </Fade>
         <DownArrow src="/images/Arrowwhite.png" onClick={scrollDown} />

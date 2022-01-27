@@ -3,14 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const Partners = () => {
+const Partners = ({t}) => {
   return (
     <PartnersContainer>
-      <h3>World-class Partners</h3>
+      <h3>{t("abouttitle7")}</h3>
       <p>
-        We have deep expertise in the industry’s leading marketing technology
-        solutions, and we maintain top-tier relationships with these key
-        partners.
+      {t("aboutdesc10")}
       </p>
 
       <PartnersList>

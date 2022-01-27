@@ -2,24 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const GlobalFootprint = () => {
+const GlobalFootprint = ({t}) => {
   return (
     <GlobalFootprintContainer>
       <img src="/images/world-map.gif" alt="map" />
       <GloballyLocalSection>
         <GloballyLocalText>
-          <h2>Globally Local</h2>
-          <h3>A Global Footprint and Feet on the Ground</h3>
+          <h2>{t("abouttitle1")}</h2>
+          <h3>{t("abouttitle2")}</h3>
           <p></p>
           <p>
             <span>
-              Formed in 2001, Proximity operates in all major business hubs
-              across the globe. We are a network of strong, locally significant
-              agencies, a third of which have been recognized as Agency of the
-              Year in the past three years. We provide access to regional
-              centers of excellence in digital development, marketing enablement
-              and performance media which are both highly effective and
-              cost-efficient.
+            {t("aboutdesc1")}
             </span>
           </p>
           <p></p>

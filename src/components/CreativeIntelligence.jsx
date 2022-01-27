@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const CreativeIntelligence = () => {
+const CreativeIntelligence = ({t}) => {
   return (
     <CreativeIntelligenceContainer>
       <article>
@@ -12,9 +12,9 @@ const CreativeIntelligence = () => {
       </article>
 
       <IntellingenceText>
-        <h3>Creative Intelligence</h3>
+        <h3>{t("abouttitle3")}</h3>
         <p></p>
-        <p><span>Data-driven creativity requires a deft blend of art and science. Creative Intelligence is our principle-based set of proprietary tools which consistently deliver the modern consumer experiences that today’s digital ecosystem demands.</span></p>
+        <p><span>{t("aboutdesc2")}</span></p>
         <p></p>
       </IntellingenceText>
     </CreativeIntelligenceContainer>

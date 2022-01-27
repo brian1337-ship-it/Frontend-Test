@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const IntelligenceTools = () => {
+const IntelligenceTools = ({t}) => {
   return (
     <IntelligenceToolsContainer>
-      <h2>Creative intelligence tools</h2>
+      <h2>{t("abouttitle4")}</h2>
       <ul>
         <li>
           <figure>
-            <img src="/images/-v2-cropped.gif" alt="Sun V2" />
+            <img src="/images/sun-v2-cropped.gif" alt="Sun V2" />
           </figure>
           <h3>
             <p>
@@ -19,9 +19,7 @@ const IntelligenceTools = () => {
           <p></p>
           <p>
             <span>
-              A comprehensive decision-making framework which maps people’s
-              unmet needs to a brand’s most relevant assets to create high-value
-              interactions across the scope of their relationship.
+            {t("aboutdesc3")}
             </span>
           </p>
           <p></p>
@@ -37,10 +35,7 @@ const IntelligenceTools = () => {
           </h3>
           <p></p>
           <p>
-            Data-Driven Destination Mapping is our unique evolution of journey
-            mapping fuses qualitative and quantitative understanding of a
-            consumer to architect the optimal experience and drive
-            business-building behavior change.
+          {t("aboutdesc4")}
           </p>
           <p></p>
         </li>
@@ -55,9 +50,7 @@ const IntelligenceTools = () => {
           </h3>
           <p></p>
           <p>
-            An insight-mining process that delivers revelations: unexpected
-            human and brand insights that make the most compelling creative
-            ideas possible.
+          {t("aboutdesc5")}
           </p>
           <p></p>
         </li>
@@ -72,9 +65,7 @@ const IntelligenceTools = () => {
           </h3>
           <p></p>
           <p>
-            Our proprietary algorithm, content strategy, auditing and
-            measurement processes allow us to continuously optimize a brand’s
-            story in real time.
+          {t("aboutdesc6")}
           </p>
           <p></p>
         </li>
@@ -89,8 +80,7 @@ const IntelligenceTools = () => {
           </h3>
           <p></p>
           <p>
-            A three-day intensive creative collaboration process which harnesses
-            the brightest talent to get to the very best experience-led ideas.
+          {t("aboutdesc7")}
           </p>
           <p></p>
         </li>

@@ -114,6 +114,10 @@ const FootText = styled.div`
   max-width: 75%;
   display: block;
   color: #fff;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const FootSection = styled.div`

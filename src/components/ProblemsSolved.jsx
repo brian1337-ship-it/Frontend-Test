@@ -2,32 +2,34 @@ import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 
-const ProblemsSolved = () => {
+const ProblemsSolved = ({ t }) => {
   return (
     <ProblemsSolvedContainer>
-      <img src="/images/pencil-2-v2-cropped.gif" alt="pencil" />
-      <h2>Business Problems We've Solved</h2>
-      <MiniCardSection>
-        <article>
-          <a href="#">
-            <img src="/images/cochlear_o.jpg" alt="" />
-            <MinicardInfo>
-              <h5>Can a love story double as a hearing test?</h5>
-              <span>Find out here</span>
-            </MinicardInfo>
-          </a>
-        </article>
-        <article>
-          <a href="#">
-            <img src="/images/afll.jpg" alt="" />
-            <MinicardInfo>
-              <h5>How close to an AFL player can you get?</h5>
-              <span>Find out here</span>
-            </MinicardInfo>
-          </a>
-        </article>
-      </MiniCardSection>
-      <a href="/work">View more work</a>
+      <Fade bottom>
+        <img src="/images/pencil-2-v2-cropped.gif" alt="pencil" />
+        <h2>{t("hometitle4")}</h2>
+        <MiniCardSection>
+          <article>
+            <a href="#">
+              <img src="/images/cochlear_o.jpg" alt="" />
+              <MinicardInfo>
+                <h5>{t("homedescription2")}</h5>
+                <span>{t("homedescription4")}</span>
+              </MinicardInfo>
+            </a>
+          </article>
+          <article>
+            <a href="#">
+              <img src="/images/afll.jpg" alt="" />
+              <MinicardInfo>
+                <h5>{t("homedescription3")}</h5>
+                <span>{t("homedescription4")}</span>
+              </MinicardInfo>
+            </a>
+          </article>
+        </MiniCardSection>
+        <a href="/work">{t("homedescription5")}</a>
+      </Fade>
     </ProblemsSolvedContainer>
   );
 };
@@ -119,6 +121,13 @@ const MiniCardSection = styled.div`
     font-family: Avenir-Book;
     cursor: pointer;
     text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

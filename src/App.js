@@ -1,6 +1,6 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { Homepage, Aboutpage, Workpage } from "./pages";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+import { Homepage, Aboutpage } from "./pages";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -15,8 +15,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<Aboutpage />} />
-        <Route path="/work" element={<Workpage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 
       <Footer />

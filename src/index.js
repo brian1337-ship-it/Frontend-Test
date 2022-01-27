@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -7,12 +7,16 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
+import "./i18n";
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </Suspense>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

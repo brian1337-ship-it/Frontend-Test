@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import GlobalFootprint from "../components/GlobalFootprint";
 import CreativeIntelligence from "../components/CreativeIntelligence";
@@ -6,33 +6,46 @@ import IntelligenceTools from "../components/IntelligenceTools";
 import Omnicom from "../components/Omnicom";
 import Clients from "../components/Clients";
 import Partners from "../components/Partners";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import Fade from "react-reveal/Fade";
 
 const Aboutpage = () => {
+  const { t, i18n } = useTranslation();
+
+  // Pull header state from redux store
+  const { language } = useSelector((state) => state.header);
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
   return (
     <AboutPageContainer>
-      <GlobalFootprintSection>
-        <GlobalFootprint />
-      </GlobalFootprintSection>
+      <Fade bottom>
+        <GlobalFootprintSection>
+          <GlobalFootprint t={t} />
+        </GlobalFootprintSection>
 
-      <CreativeIntelligenceSection>
-        <CreativeIntelligence />
-      </CreativeIntelligenceSection>
+        <CreativeIntelligenceSection>
+          <CreativeIntelligence t={t} />
+        </CreativeIntelligenceSection>
 
-      <IntelligenceToolsSection>
-        <IntelligenceTools />
-      </IntelligenceToolsSection>
+        <IntelligenceToolsSection>
+          <IntelligenceTools t={t} />
+        </IntelligenceToolsSection>
 
-      <OmnicomSection>
-        <Omnicom />
-      </OmnicomSection>
+        <OmnicomSection>
+          <Omnicom t={t} />
+        </OmnicomSection>
 
-      <ClientsSection>
-        <Clients />
-      </ClientsSection>
-      
-      <PartnersSection>
-        <Partners />
-      </PartnersSection>
+        <ClientsSection>
+          <Clients t={t} />
+        </ClientsSection>
+
+        <PartnersSection>
+          <Partners t={t} />
+        </PartnersSection>
+      </Fade>
     </AboutPageContainer>
   );
 };
@@ -93,7 +106,7 @@ const ClientsSection = styled.div`
   justify-content: center;
 `;
 
-const PartnersSection = styled.div` 
+const PartnersSection = styled.div`
   width: 100%;
   height: 100%;
   margin-left: auto;

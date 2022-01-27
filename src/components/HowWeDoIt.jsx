@@ -1,34 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
+import { useDispatch } from "react-redux";
+import { navigateToSection } from "../features/headerSlice";
 
-const HowWeDoIt = () => {
+const HowWeDoIt = ({ t }) => {
+  const dispatch = useDispatch();
   return (
     <HowWeDoItContainer>
-      <h2>How we do it</h2>
-      <h3>We use data-driven creativity to solve business problems</h3>
-      <article>
-        <img src="/images/hwd_banner.jpg" alt="how we do it banner" />
-        <CardInfoSection>
-          <p>
-            <span>
-              By harnessing powerful insights and smart targeting, we’re able to
-              create behavior-changing ideas and experiences that deliver value
-              to brands. Supported by our proprietary&nbsp;
-            </span>
-            <a href="/about">Creative Intelligence process</a>
-            <span>,&nbsp;</span>
-            <a href="/about">unique tools</a>
-            <span>&nbsp;and&nbsp;</span>
-            <a href="/about#World-classPartners">global partners</a>
-            <span>
-              , we are able to put data at the heart of everything we do to
-              orchestrate experiences that deliver creativity with precision and
-              purpose.
-            </span>
-          </p>
-        </CardInfoSection>
-      </article>
+      <Fade bottom>
+        <h2>{t("hometitle2")}</h2>
+        <h3>{t("hometitle3")}</h3>
+        <article>
+          <img src="/images/hwd_banner.jpg" alt="how we do it banner" />
+          <CardInfoSection>
+            <p>
+              <span>{t("homedescription.part1")}&nbsp;</span>
+              <a href="/about">{t("homedescription.part2")}</a>
+              <span>,&nbsp;</span>
+              <a href="/about">{t("homedescription.part3")}</a>
+              <span>&nbsp;and&nbsp;</span>
+              <a
+                href="/about"
+                onClick={() => dispatch(navigateToSection("partners"))}
+              >
+                {t("homedescription.part4")}
+              </a>
+              <span>{t("homedescription.part5")}</span>
+            </p>
+          </CardInfoSection>
+        </article>
+      </Fade>
     </HowWeDoItContainer>
   );
 };
